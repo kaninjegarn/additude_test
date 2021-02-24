@@ -1,0 +1,36 @@
+@import '../../assets/scss/variables.scss';
+
+.header {
+  height: 10vh;
+  background-color: $background_main-color;
+  color: $font-main_color;
+  display: flex;
+  justify-content: center;
+
+  &__title {
+    font-size: $title_main-size;
+    &--pink {
+      color: rgb(255, 4, 255);
+    }
+
+    &--green {
+      color: rgb(151, 250, 2);
+    }
+
+    &--orange {
+      color: rgb(255, 175, 27);
+    }
+  }
+
+  &__divider {
+    display: flex;
+    margin: 0 auto;
+    width: 200px;
+    height: 2px;
+    
+    span {
+      width: 100%;
+      background-color: $font_main-color;
+    }
+  }
+}

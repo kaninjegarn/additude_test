@@ -1,0 +1,15 @@
+@import '../../assets/scss/variables.scss';
+
+.tip {
+  height: 100vh;
+  background-color: $background_main-color;
+
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: $title_main-size;
+    color: $font_main_color;
+  }
+}
