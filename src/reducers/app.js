@@ -1,6 +1,5 @@
 import {
   SET_TEXT,
-  SET_GIPHYS,
   SET_PROFILES,
   SET_GENDER,
   SET_NATION
@@ -8,7 +7,6 @@ import {
 
 const initialState = {
   text: "",
-  giphys: [],
   gender: "",
   nation: "",
 };
@@ -19,11 +17,6 @@ export default (state = initialState, action) => {
       return {
         ...state,
         text: action.text
-      };
-    case SET_GIPHYS:
-      return {
-        ...state,
-        giphys: action.giphys
       };
     case SET_PROFILES:
       return {

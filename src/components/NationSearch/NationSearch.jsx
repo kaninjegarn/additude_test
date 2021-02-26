@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchProfiles, setNation } from '../../actions';
+import { whatCountry } from '../../helpers';
 import './NationSearch.scss';
 
 export default ({nation, gender}) => {
@@ -29,7 +30,7 @@ export default ({nation, gender}) => {
         className={`nationSearch__dropDown${showDropDown ? '--active' : ''}`}>
           {nationArray.map(item => {
             return(
-              <div className="nationSearch__dropDown--item" onClick={() => setNation(item)}>{item}</div>
+              <div className="nationSearch__dropDown--item" onClick={() => setNation(item)}>{whatCountry(item)}</div>
             )
           })}
       </div>
