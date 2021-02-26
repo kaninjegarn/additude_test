@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import store from "./store";
 import { Provider } from "react-redux";
-import { fetchProducts } from "./actions";
+import { fetchProducts, fetchProfiles } from "./actions";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-fetchProducts();
+// fetchProducts();
+fetchProfiles();
 
 ReactDOM.render(
   <Provider store={store}>

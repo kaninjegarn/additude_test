@@ -1,0 +1,34 @@
+@import '../../assets/scss/variables.scss';
+
+.searchPanel {
+  margin-bottom: 20px;
+
+    &__container {
+      display: flex;
+    }
+
+    &__input {
+      width: 70%;
+      margin-left: 10%;
+      padding: 10px;
+  }
+}
+
+.sortingPanel {
+  display: flex;
+  justify-content: center;
+}
+
+.searchButton {
+  color: #f0f0f0;
+  background-color: rgb(13, 88, 226);
+  height: 100%;
+  width: 80px;
+  border: 1px solid black;
+  padding: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(15, 83, 209);
+  }
+}
