@@ -13,7 +13,8 @@ export default ({gender, nation}) => {
   return(
     <div
       className="genderSearch"
-      onMouseEnter={() => setShowDropDown(true)}
+      // onMouseEnter={() => setShowDropDown(true)}
+      onClick={() => setShowDropDown(true)}
       onMouseLeave={() => setShowDropDown(false)}
     >
       sort by Gender

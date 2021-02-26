@@ -2,12 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import store from "./store";
 import { Provider } from "react-redux";
-import { fetchProducts, fetchProfiles } from "./actions";
+import { fetchProfiles } from "./actions";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// fetchProducts();
 fetchProfiles();
 
 ReactDOM.render(

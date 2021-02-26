@@ -5,6 +5,11 @@
   background-color: rgb(228, 126, 30);
   width: 120px;
   height: 100%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(211, 110, 15);
+  }
   
   &__dropDown {
     display: none;
