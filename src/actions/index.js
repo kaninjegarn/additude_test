@@ -47,6 +47,5 @@ export const fetchProfiles = async (gender, nation) => {
       setTimeout(() => {
         setProfiles(res.results);
       }, 1000);  
-      
     });  
 };    
