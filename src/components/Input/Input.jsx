@@ -1,12 +1,13 @@
 import React from "react";
-import { setText } from "../../actions";
+import { setSearch, setText } from "../../actions";
 import { GenderSearch, NationSearch } from '../index';
 import './Input.scss';
 
-export default ({ gender, text }) => {
+export default ({ gender, text, search }) => {
   
   const handleCLick = () => {
-    console.log(text)
+    setSearch(search = !search)
+    console.log(search)
 
   }
 

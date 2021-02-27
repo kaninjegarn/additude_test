@@ -3,6 +3,7 @@ import './ProfileList.scss';
 import { Profile } from '../index';
 
 export default ({ profiles, text }) => {
+  let key = 0
 
   // if(profiles) {
   //   profiles.name.first.sort( item =>  {
@@ -14,20 +15,25 @@ export default ({ profiles, text }) => {
 
   // console.log(profiles.name.first)
 
+  // console.log(profiles.name.first.search('Meral'))
+
   return(
     <div className="profileList">
       {
         profiles && profiles.length > 0
           ? profiles.map(profile => {
             // {console.log(profile)}
+            // {console.log(profile.name.first.search('Meral'))}
             return (
               <Profile
+                key={key++}
                 firstName={profile.name.first}
                 lastName={profile.name.last}
                 country={profile.location.country}
                 cell={profile.phone}
                 mail={profile.email}
                 picture={profile.picture.large}
+                className={text != "" && profile.name.first.search(text) ? 'show' : 'dontShow'}
               />
             )
           })

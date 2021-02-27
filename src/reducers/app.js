@@ -2,13 +2,15 @@ import {
   SET_TEXT,
   SET_PROFILES,
   SET_GENDER,
-  SET_NATION
+  SET_NATION,
+  SET_SEARCH,
 } from "../types";
 
 const initialState = {
   text: "",
   gender: "",
   nation: "",
+  search: false
 };
 
 export default (state = initialState, action) => {
@@ -32,6 +34,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         nation: action.nation
+      };
+    case SET_SEARCH:
+      return {
+        ...state,
+        search: action.search
       };
   }
   return state;

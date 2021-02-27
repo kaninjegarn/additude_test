@@ -4,7 +4,8 @@ import {
   SET_TEXT,
   SET_PROFILES,
   SET_GENDER,
-  SET_NATION
+  SET_NATION,
+  SET_SEARCH
 } from "../types";
 
 export const setText = (text) => {
@@ -32,6 +33,13 @@ export const setProfiles = (profiles) => {
   store.dispatch({
     type: SET_PROFILES,
     profiles: profiles
+  });
+}
+
+export const setSearch = (search) => {
+  store.dispatch({
+    type: SET_SEARCH,
+    search: search
   });
 }
 
