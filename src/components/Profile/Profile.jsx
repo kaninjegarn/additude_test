@@ -1,69 +1,46 @@
 import React, { useEffect, useState } from 'react';
 import './Profile.scss';
+import { Switch, Route, Link } from "react-router-dom";
+import { DetailedProfile } from '../index';
 
-export default ({ key, firstName, lastName, cell, picture, mail, country, className, text, search }) => {
-  // console.log(className)
+export default ({ link, key, firstName, lastName, cell, picture, mail, country, text, title, state, street, postCode, age }) => {
   const [show, setShow] = useState(true)
-
-  // let show = false;
-  // useEffect(() => {
-  //   // console.log("works")
-    
-  //   // if (text === "" || text == "" || text != undefined || firstName.toLowerCase().includes(text)) {
-  //   //   // console.log(firstName, text)
-  //   //   // show = true
-  //   //   setShow(false)
-  //   //   console.log(show, firstName, text)
-  //   // }
-  //   // const sortingFunc = firstName.toLowerCase().includes(text);
-  //   // sortingFunc()
-  //   if(text === "" && text) {
-  //     setShow(true)
-  //   }
-  // }, [text]);
-
-
-  // useEffect(() => {
-  //   // if(search === "") {
-
-  //     if (search !== "" && text === "" || text == "" || text == undefined || firstName.toLowerCase().includes(text)) {
-  //       // console.log(firstName, text)
-  //       // show = true
-  //       setShow(false)
-  //       console.log(show, firstName, text)
-  //     } else {
-  //       setShow(true)
-  //     }
-  //   // }
-      
-  //   // console.log("hello from useeffect")
-  //   if (text !== "" && firstName.toLowerCase().includes(text)) {
-  //     console.log("works", firstName + text)
-  //     setShow(true);
-
-  //   }
-  // }, [search])
-
-
-  
+  // components props that will be used when rendering the detailed profile.
+  const detailedProfileProps = () => {
+    return <DetailedProfile 
+      firstName={firstName}
+      lastName={lastName}
+      cell={cell}
+      picture={picture}
+      mail={mail}
+      country={country}
+      title={title}
+      state={state}
+      street={street}
+      postCode={postCode}
+      age={age}
+    />
+  }
+  // whenever you clear the input -> show all profiles again.
   useEffect(() => {
+    let fullName = (firstName+lastName);
+
+    // whenever you clear the input -> show all profiles again
     if(text || text === "") {
       setShow(true);
     }
-  }, [text])
 
-
-  useEffect(() => {
-    if (search &&text.toLowerCase() !== firstName.toLowerCase() && text !== undefined && search !== undefined) {
+    // if fullname(firstName+lastName) doesnt include text -> dont show it
+    if (text && !fullName.toLowerCase().includes(text)) {
       setShow(false)
-      console.log(text, firstName)
     }
-  }, [search])
-
+  }, [text])
   return(
-    <div className={`profile ${show ? 'show': 'dontShow'}`} key={key}>
+    <div className={`profile ${show ? 'show': 'dontShow'} ${link}`} key={key}>
       <div className="profile__image">
-        <img src={picture} alt=""/>
+      <Link to={`/${link}`}>
+          <img src={picture} alt=""/>
+      </Link>
       </div>
       <div className="divider"></div>
       <div className="profile__content">
@@ -77,6 +54,9 @@ export default ({ key, firstName, lastName, cell, picture, mail, country, classN
           <p>{cell}</p>
         </div>
       </div>
+    <Switch>
+        <Route path={`/${link}`} component={detailedProfileProps} />
+    </Switch>
     </div>
   )
 }

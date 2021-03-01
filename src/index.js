@@ -6,15 +6,21 @@ import { fetchProfiles } from "./actions";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  BrowserRouter as Router,
+  BrowserRouter
+} from "react-router-dom";
 
 fetchProfiles();
 
 ReactDOM.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Provider>,
+  <BrowserRouter >
+    <Provider store={store}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Provider>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

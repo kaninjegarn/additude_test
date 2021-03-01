@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 
 const mapState = (state) => ({
   text: state.app.text,
-  gender: state.app.gender,
   search: state.app.search
 });
 

@@ -18,7 +18,7 @@ export default ({ profiles, text }) => {
   // console.log(profiles.name.first.search('Meral'))
 
   return(
-    <div className="profileList">
+    <div className="profileList" id='profileList'>
       {
         profiles && profiles.length > 0
           ? profiles.map(profile => {
@@ -26,6 +26,7 @@ export default ({ profiles, text }) => {
             // {console.log(profile.name.first.search('Meral'))}
             return (
               <Profile
+                link={profile.login.uuid}
                 key={key++}
                 firstName={profile.name.first}
                 lastName={profile.name.last}
@@ -34,6 +35,12 @@ export default ({ profiles, text }) => {
                 mail={profile.email}
                 picture={profile.picture.large}
                 className={text != "" && profile.name.first.search(text) ? 'show' : 'dontShow'}
+
+                title={profile.name.title}
+                state={profile.location.state}
+                street={profile.location.street}
+                postCode={profile.location.postCode}
+                age={profile.dob.age}
               />
             )
           })
@@ -42,20 +49,6 @@ export default ({ profiles, text }) => {
               Searching...
                 </div>
           </div>
-      }
-
-
-
-
-      {
-        // profiles.map(p => {
-        //   <Profile
-        //     // key={key}
-        //     firstName="hej"
-        //     // lastName={p.name.last}
-        //     // cell={p.cell}
-        //   />
-        // })
       }
     </div>
   )

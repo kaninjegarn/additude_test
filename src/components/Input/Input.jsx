@@ -3,8 +3,7 @@ import { setSearch, setText } from "../../actions";
 import { GenderSearch, NationSearch } from '../index';
 import './Input.scss';
 
-export default ({ gender, text, search }) => {
-  
+export default ({ text, search }) => {
   const handleCLick = () => {
     setSearch(search = !search)
     console.log(search)

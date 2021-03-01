@@ -23,7 +23,6 @@ export default ({nation, gender}) => {
     <div
       className="nationSearch"
       onClick={() => setShowDropDown(true)}
-      // onMouseEnter={() => setShowDropDown(true)}
       onMouseLeave={() => setShowDropDown(false)}
     >
       sort by Nation
@@ -31,7 +30,6 @@ export default ({nation, gender}) => {
         className={`nationSearch__dropDown${showDropDown ? '--active' : ''}`}>
           {nationArray.map(item => {
             return(
-              // <div className="nationSearch__dropDown--item" onClick={() => setNation(item)}>{whatCountry(item)}</div>
               <div className="nationSearch__dropDown--item" onClick={() => setNation(item)}>{whatCountry(item)}</div>
             )
           })}
