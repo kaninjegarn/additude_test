@@ -1,3 +1,4 @@
+// takes every country that exists in the 1.3 api version and make it more readable.
 const whatCountry = (country) => {
   switch (country) {
     case 'au':

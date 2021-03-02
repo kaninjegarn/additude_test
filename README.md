@@ -1,5 +1,4 @@
-###
-created by using create-react app
+### created by using create-react app
 
-###
-start command -> npm start
+### npm install
+### start command -> npm start
